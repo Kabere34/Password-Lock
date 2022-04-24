@@ -92,13 +92,15 @@ class TestCredentials(unittest.TestCase):
     def test_find_credentials_by_account(self):
         '''
           test to check if we can find a credential by account and display information
-          '''
+        '''
         self.new_credentials.save_credentials()
-        test_credentials = Credentials("Instagram", "John", "JohN65")
+        test_credentials = Credentials(
+            "Twitter", "Martha21", "Xrtm345")  # new credentials
         test_credentials.save_credentials()
-        found_credentials = Credentials.find_by_account("Instagram")
 
-        self.assertEqual(found_credentials.username, test_credentials.username)
+        found_credentials = Credentials.find_by_account("Twitter")
+
+        self.assertEqual(found_credentials, test_credentials.account)
 
 
 if __name__ == '__main__':
