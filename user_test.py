@@ -60,15 +60,33 @@ class TestCredentials(unittest.TestCase):
         self.new_credentials.save_credentials()  # saving the new credentials
         self.assertEqual(len(Credentials.credentials_list), 1)
 
+    def tearDown(self):
+        '''
+        tearDown method that does clean up after each test case has run.
+        '''
+        Credentials.credentials_list = []
+
     def test_save_multiple_credentials(self):
         '''
         test_save_multiple_credentials test case to test if the credentials saves multiple objects to our credentials_list
         '''
         self.new_credentials.save_credentials()
-        test_credentials = User("user", "Mario123")
+        test_credentials = Credentials("Twitter", "Martha21", "Xrtm345")
         # new Credentials
         test_credentials.save_credentials()
         self.assertEqual(len(Credentials.credentials_list), 2)
+
+    def test_delete_credentials(self):
+        '''
+        test_delete_credentials to test if we can remove credentials detail from our credentials list
+        '''
+        self.new_credentials.save_credentials()
+        test_credentials = Credentials("Twitter", "Martha21", "Xrtm345")
+        # new credentials
+        test_credentials.save_credentials()
+
+        self.new_credentials.delete_credentials()  # deleting a user object
+        self.assertEqual(len(User.user_list), 1)
 
 
 if __name__ == '__main__':

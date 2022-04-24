@@ -36,4 +36,17 @@ class Credentials():
     def save_credentials(self):
         '''save_credentials method saves credentials object into contact_list
         '''
+
         Credentials.credentials_list.append(self)
+
+    def test_delete_credentials(self):
+        '''
+        test_delete_credentials to test if we can remove credentials detail from our credentials list
+        '''
+        self.new_credentials.save_credentials()
+        test_credentials = Credentials("Twitter", "Martha21", "Xrtm345")
+        # new credentials
+        test_credentials.save_credentials()
+
+        self.new_credentials.delete_credentials()  # deleting a user object
+        self.assertEqual(len(User.user_list), 1)
