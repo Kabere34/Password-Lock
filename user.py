@@ -39,14 +39,8 @@ class Credentials():
 
         Credentials.credentials_list.append(self)
 
-    def test_delete_credentials(self):
+    def delete_credentials(self):
         '''
-        test_delete_credentials to test if we can remove credentials detail from our credentials list
+         delete_credentials method deletes a saved credential from the credentials_list
         '''
-        self.new_credentials.save_credentials()
-        test_credentials = Credentials("Twitter", "Martha21", "Xrtm345")
-        # new credentials
-        test_credentials.save_credentials()
-
-        self.new_credentials.delete_credentials()  # deleting a user object
-        self.assertEqual(len(User.user_list), 1)
+        Credentials.credentials_list.remove(self)

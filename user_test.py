@@ -85,8 +85,9 @@ class TestCredentials(unittest.TestCase):
         # new credentials
         test_credentials.save_credentials()
 
-        self.new_credentials.delete_credentials()  # deleting a user object
-        self.assertEqual(len(User.user_list), 1)
+        self.new_credentials.delete_credentials()
+        # deleting a credentials object
+        self.assertEqual(len(Credentials.credentials_list), 1)
 
 
 if __name__ == '__main__':
