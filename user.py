@@ -23,6 +23,7 @@ class User:
 class Credentials():
     """Class that generates new instances of credentials details
       """
+    credentials_list = []  # Empty credentials list
 
     def __init__(self, account, username, password):
         """
@@ -31,3 +32,8 @@ class Credentials():
         self.account = account
         self.username = username
         self.password = password
+
+    def save_credentials(self):
+        '''save_credentials method saves credentials object into contact_list
+        '''
+        Credentials.credentials_list.append(self)
