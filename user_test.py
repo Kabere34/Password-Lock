@@ -1,5 +1,6 @@
 import unittest  # Importing the unittest module
 from user import User  # Importing the User class
+from user import Credentials
 
 
 class TestUser(unittest.TestCase):
@@ -31,6 +32,26 @@ class TestUser(unittest.TestCase):
              '''
         self.new_user.save_user()  # saving the new user details
         self.assertEqual(len(User.user_list), 1)
+
+
+class TestCredentials(unittest.TestCase):
+    '''
+      Test class that defines test cases for credentials.
+    '''
+
+    def setUp(self):
+        '''
+            setUp method to run before each test case.
+          '''
+        self.new_credentials = Credentials("Gmail", "Ivy_kabere", "Kabere@254")
+
+    def test_init(self):
+        '''
+        test_init test case to test if the object is initailized correctly
+        '''
+        self.assertEqual(self.new_credentials.account, "Gmail")
+        self.assertEqual(self.new_credentials.username, "Ivy_kabere")
+        self.assertEqual(self.new_credentials.password, "Kabere@254")
 
 
 if __name__ == '__main__':
