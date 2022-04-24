@@ -10,4 +10,5 @@ class User:
           __init__ method that helps us define properties for our objects.
         '''
         self.username = username
+
         self.password = password

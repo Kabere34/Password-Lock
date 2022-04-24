@@ -1,5 +1,5 @@
 import unittest  # Importing the unittest module
-# from user import User  # Importing the User class
+from user import User  # Importing the User class
 
 
 class TestUser(unittest.TestCase):
@@ -9,3 +9,21 @@ class TestUser(unittest.TestCase):
        Args:
           unittest.TestCase: TestCase class that helps in creating test cases
        '''
+
+    def setUp(self):
+        '''
+
+        Set up method to run before each test cases.
+        '''
+        self.new_user = User("Mary", "Mario123")  # create user object
+
+    def test_init(self):
+        '''
+          test_init test case to test if the object is initialized properly
+          '''
+        self.assertEqual(self.new_user.username, "Mary")
+        self.assertEqual(self.new_user.password, "Mario123")
+
+
+if __name__ == '__main__':
+    unittest.main()
