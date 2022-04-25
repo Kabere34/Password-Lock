@@ -47,11 +47,26 @@ def save_credentials(credentials):
     '''
     Function to save Credentials to the credentials list
     '''
-    credentials.save_credentials()
+    return credentials.save_credentials()
 
 
-def de_credentials(credentials):
+def display_credentials():
+    '''
+    Function to display credentials
+    '''
+    return Credentials.display_credentials()
+
+
+def del_credentials(credentials):
     '''
     Function to delete Credentials in the credentials list
     '''
     credentials.delete_credentials()
+
+
+def find_credentials(account):
+    '''
+    Function that finds a credentials by account and returns the credential
+    '''
+
+    return Credentials.find_by_account(account)
