@@ -70,3 +70,10 @@ def find_credentials(account):
     '''
 
     return Credentials.find_by_account(account)
+
+
+def check_existing_credentials(account):
+    '''
+    Function that checks if credentials exists with that account and return a Boolean
+    '''
+    return Credentials.contact_exist(account)
