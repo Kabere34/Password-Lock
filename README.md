@@ -62,3 +62,6 @@ The user would like to.... :
 If you have any question or contributions, please email me at [kabereivy@gmail.com]
 
 ## License
+
+- _MIT License:_
+- Copyright (c) 2022 **Ivy Kabere**
