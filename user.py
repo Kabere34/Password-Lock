@@ -70,7 +70,7 @@ class Credentials():
 
     @classmethod
     def display_credentials(cls):
-      #  '''
-      #  method that returns the credentials list
-      # '''
+        '''
+         method that returns the credentials list
+         '''
         return cls.credentials_list
